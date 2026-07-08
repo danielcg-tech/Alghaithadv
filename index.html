@@ -481,22 +481,27 @@
             <!-- Contact Form -->
             <div class="col-lg-7" data-aos="fade-left">
                 <form class="contact-form" id="contactForm" novalidate>
+                    <!-- Web3Forms hidden fields -->
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="New Inquiry - Al Ghaith Advertising Website">
+                    <input type="hidden" name="from_name" value="Al Ghaith Website">
+                    <input type="hidden" name="redirect" value="false">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label">Your Name *</label>
-                            <input type="text" class="form-control" placeholder="John Doe" required>
+                            <input type="text" name="name" class="form-control" placeholder="John Doe" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Email Address *</label>
-                            <input type="email" class="form-control" placeholder="john@example.com" required>
+                            <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="+971 50 000 0000">
+                            <input type="tel" name="phone" class="form-control" placeholder="+971 50 000 0000">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Service Required</label>
-                            <select class="form-control">
+                            <select name="service" class="form-control">
                                 <option value="" disabled selected>Select a Service</option>
                                 <option>Digital / Large Format Printing</option>
                                 <option>Signages</option>
@@ -512,12 +517,25 @@
                         </div>
                         <div class="col-12">
                             <label class="form-label">Project Details *</label>
-                            <textarea class="form-control" rows="5" placeholder="Tell us about your project — size, quantity, timeline, etc." required></textarea>
+                            <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project — size, quantity, timeline, etc." required></textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary-custom w-100 py-3" id="submitBtn">
                                 <i class="fas fa-paper-plane me-2"></i> Send Message
                             </button>
+                        </div>
+                        <!-- Success / Error messages -->
+                        <div class="col-12" id="formSuccess" style="display:none;">
+                            <div class="form-feedback success">
+                                <i class="fas fa-check-circle me-2"></i>
+                                Message sent! We'll get back to you shortly.
+                            </div>
+                        </div>
+                        <div class="col-12" id="formError" style="display:none;">
+                            <div class="form-feedback error">
+                                <i class="fas fa-exclamation-circle me-2"></i>
+                                Something went wrong. Please call us at <a href="tel:+971525785278">+971 52 578 5278</a>.
+                            </div>
                         </div>
                     </div>
                 </form>

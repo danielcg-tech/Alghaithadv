@@ -867,6 +867,27 @@ img { max-width: 100%; display: block; }
 .contact-form .form-control::placeholder { color: #555; }
 .contact-form select option { background: var(--dark-3); color: var(--white); }
 
+.form-feedback {
+    padding: 14px 18px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.form-feedback.success {
+    background: rgba(37,211,102,0.1);
+    border: 1px solid rgba(37,211,102,0.3);
+    color: #25D366;
+}
+.form-feedback.error {
+    background: rgba(204,0,0,0.1);
+    border: 1px solid rgba(204,0,0,0.3);
+    color: var(--primary);
+}
+.form-feedback.error a { color: var(--primary); text-decoration: underline; }
+
 /* ===== FOOTER ===== */
 .footer {
     background: var(--dark-2);

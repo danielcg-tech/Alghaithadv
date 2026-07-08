@@ -260,46 +260,68 @@ if (backToTop) {
     });
 }
 
-/* ===== CONTACT FORM ===== */
+/* ===== CONTACT FORM — Web3Forms ===== */
 const contactForm = document.getElementById('contactForm');
 const submitBtn   = document.getElementById('submitBtn');
+const formSuccess = document.getElementById('formSuccess');
+const formError   = document.getElementById('formError');
 
 if (contactForm && submitBtn) {
-    contactForm.addEventListener('submit', (e) => {
+
+    /* Clear red borders on typing */
+    contactForm.querySelectorAll('[required]').forEach(input => {
+        input.addEventListener('input', () => { input.style.borderColor = ''; });
+    });
+
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Basic validation
-        const inputs = contactForm.querySelectorAll('[required]');
+        /* Validate required fields */
         let valid = true;
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                input.style.borderColor = '#CC0000';
+        contactForm.querySelectorAll('[required]').forEach(field => {
+            if (!field.value.trim()) {
+                field.style.borderColor = '#CC0000';
                 valid = false;
             } else {
-                input.style.borderColor = '';
+                field.style.borderColor = '';
             }
         });
         if (!valid) return;
 
-        // Success state
+        /* Loading state */
         const original = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-check me-2"></i> Message Sent Successfully!';
-        submitBtn.style.background = '#25D366';
-        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
+        submitBtn.disabled  = true;
+        if (formSuccess) formSuccess.style.display = 'none';
+        if (formError)   formError.style.display   = 'none';
 
-        setTimeout(() => {
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(contactForm)
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                submitBtn.innerHTML = '<i class="fas fa-check me-2"></i> Message Sent!';
+                submitBtn.style.background = '#25D366';
+                if (formSuccess) formSuccess.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => {
+                    submitBtn.innerHTML    = original;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled     = false;
+                    if (formSuccess) formSuccess.style.display = 'none';
+                }, 5000);
+            } else {
+                throw new Error('Failed');
+            }
+        } catch (err) {
             submitBtn.innerHTML = original;
-            submitBtn.style.background = '';
-            submitBtn.disabled = false;
-            contactForm.reset();
-        }, 3500);
-    });
-
-    // Remove red border on input
-    contactForm.querySelectorAll('[required]').forEach(input => {
-        input.addEventListener('input', () => {
-            input.style.borderColor = '';
-        });
+            submitBtn.disabled  = false;
+            if (formError) formError.style.display = 'block';
+            setTimeout(() => { if (formError) formError.style.display = 'none'; }, 6000);
+        }
     });
 }
 
