@@ -125,17 +125,16 @@ img { max-width: 100%; display: block; }
 
 /* Logo — white bg box when transparent over hero, removed when scrolled */
 .navbar-logo {
-    height: 46px;
-    max-width: 200px;
+    height: 56px;
     width: auto;
     object-fit: contain;
     transition: all 0.4s ease;
     background: #ffffff;
-    padding: 6px 14px;
+    padding: 8px 18px;
     border-radius: var(--radius);
 }
 #mainNav.scrolled .navbar-logo {
-    height: 38px;
+    height: 46px;
     background: transparent;
     padding: 0;
     border-radius: 0;
@@ -1175,7 +1174,7 @@ img { max-width: 100%; display: block; }
     .stat-number { font-size: 40px; }
 
     /* Logo */
-    .navbar-logo { height: 40px; }
+    .navbar-logo { height: 46px; }
 
     /* Portfolio filters wrap nicely */
     .filter-btn { font-size: 10px; padding: 7px 14px; }
@@ -1198,7 +1197,7 @@ img { max-width: 100%; display: block; }
     .hero-desc { font-size: 13px; }
 
     /* Logo */
-    .navbar-logo { height: 34px; }
+    .navbar-logo { height: 40px; }
     .preloader-logo { height: 70px; }
 
     /* Portfolio */
