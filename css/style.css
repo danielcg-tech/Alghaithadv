@@ -123,21 +123,28 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid var(--border);
 }
 
-/* Logo — white bg box when transparent over hero, removed when scrolled */
-.navbar-logo {
-    height: 56px;
-    width: auto;
-    object-fit: contain;
-    transition: all 0.4s ease;
+/* Logo — white bg on the wrapper <a>, not on the <img> */
+.logo-brand-wrap {
     background: #ffffff;
-    padding: 8px 18px;
+    padding: 7px 14px;
     border-radius: var(--radius);
+    transition: all 0.4s ease;
+    display: inline-flex !important;
+    align-items: center;
 }
-#mainNav.scrolled .navbar-logo {
-    height: 46px;
+#mainNav.scrolled .logo-brand-wrap {
     background: transparent;
     padding: 0;
-    border-radius: 0;
+}
+.navbar-logo {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: height 0.4s ease;
+}
+#mainNav.scrolled .navbar-logo {
+    height: 44px;
 }
 .footer-logo {
     height: 60px;
@@ -1174,7 +1181,7 @@ img { max-width: 100%; display: block; }
     .stat-number { font-size: 40px; }
 
     /* Logo */
-    .navbar-logo { height: 46px; }
+    .navbar-logo { height: 44px; }
 
     /* Portfolio filters wrap nicely */
     .filter-btn { font-size: 10px; padding: 7px 14px; }
@@ -1197,7 +1204,7 @@ img { max-width: 100%; display: block; }
     .hero-desc { font-size: 13px; }
 
     /* Logo */
-    .navbar-logo { height: 40px; }
+    .navbar-logo { height: 36px; }
     .preloader-logo { height: 70px; }
 
     /* Portfolio */
