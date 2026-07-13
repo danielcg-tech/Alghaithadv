@@ -137,7 +137,9 @@ img { max-width: 100%; display: block; }
     max-width: 220px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: var(--radius);
 }
 
 /* Nav links */
