@@ -123,29 +123,73 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid var(--border);
 }
 
-/* Logo — white bg on wrapper, override Bootstrap navbar-brand padding */
+/* Logo */
 .navbar-brand.logo-brand-wrap {
-    padding: 6px 12px !important;
-    background: #ffffff;
-    border-radius: var(--radius);
+    padding: 0 !important;
+    background: transparent !important;
     display: flex !important;
     align-items: center;
-    transition: all 0.4s ease;
+    gap: 10px;
     margin-right: 0;
+    transition: var(--transition);
 }
-#mainNav.scrolled .navbar-brand.logo-brand-wrap {
-    background: transparent;
-    padding: 0 !important;
+
+/* AG icon — clip wide image to show only the icon portion */
+.logo-icon-wrap {
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
 }
-.navbar-logo {
-    height: 72px;
+.navbar-logo-icon {
+    height: 44px;
     width: auto;
     display: block;
-    transition: height 0.4s ease;
+    flex-shrink: 0;
 }
-#mainNav.scrolled .navbar-logo {
-    height: 58px;
+#mainNav.scrolled .logo-icon-wrap {
+    background: transparent;
+    border-radius: 0;
+    width: 44px;
+    height: 44px;
 }
+#mainNav.scrolled .navbar-logo-icon { height: 36px; }
+
+/* Text beside icon */
+.logo-text-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+.logo-company-name {
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 2px;
+    line-height: 1;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    transition: var(--transition);
+}
+.logo-company-sub {
+    font-size: 7.5px;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Scrolled — dark text on white navbar */
+#mainNav.scrolled .logo-company-name { color: var(--text); }
 .footer-logo {
     height: 60px;
     max-width: 220px;
@@ -268,7 +312,7 @@ img { max-width: 100%; display: block; }
 .hero-content {
     position: relative;
     z-index: 2;
-    padding-top: 110px;
+    padding-top: 90px;
     padding-bottom: 40px;
     flex: 1;
     display: flex;
@@ -1181,7 +1225,8 @@ img { max-width: 100%; display: block; }
     .stat-number { font-size: 40px; }
 
     /* Logo */
-    .navbar-logo { height: 52px; }
+    .logo-company-name { font-size: 15px; }
+    .logo-company-sub { font-size: 6.5px; letter-spacing: 0.4px; }
 
     /* Portfolio filters wrap nicely */
     .filter-btn { font-size: 10px; padding: 7px 14px; }
@@ -1204,7 +1249,10 @@ img { max-width: 100%; display: block; }
     .hero-desc { font-size: 13px; }
 
     /* Logo */
-    .navbar-logo { height: 44px; }
+    .logo-company-name { font-size: 13px; letter-spacing: 1.5px; }
+    .logo-company-sub { display: none; }
+    .logo-icon-wrap { width: 42px; height: 42px; }
+    .navbar-logo-icon { height: 36px; }
     .preloader-logo { height: 70px; }
 
     /* Portfolio */
