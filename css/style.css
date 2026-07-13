@@ -123,28 +123,28 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid var(--border);
 }
 
-/* Logo — white bg on the wrapper <a>, not on the <img> */
-.logo-brand-wrap {
+/* Logo — white bg on wrapper, override Bootstrap navbar-brand padding */
+.navbar-brand.logo-brand-wrap {
+    padding: 6px 12px !important;
     background: #ffffff;
-    padding: 7px 14px;
     border-radius: var(--radius);
-    transition: all 0.4s ease;
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center;
+    transition: all 0.4s ease;
+    margin-right: 0;
 }
-#mainNav.scrolled .logo-brand-wrap {
+#mainNav.scrolled .navbar-brand.logo-brand-wrap {
     background: transparent;
-    padding: 0;
+    padding: 0 !important;
 }
 .navbar-logo {
-    height: 54px;
+    height: 38px;
     width: auto;
-    object-fit: contain;
     display: block;
     transition: height 0.4s ease;
 }
 #mainNav.scrolled .navbar-logo {
-    height: 44px;
+    height: 34px;
 }
 .footer-logo {
     height: 60px;
@@ -1181,7 +1181,7 @@ img { max-width: 100%; display: block; }
     .stat-number { font-size: 40px; }
 
     /* Logo */
-    .navbar-logo { height: 44px; }
+    .navbar-logo { height: 34px; }
 
     /* Portfolio filters wrap nicely */
     .filter-btn { font-size: 10px; padding: 7px 14px; }
@@ -1204,7 +1204,7 @@ img { max-width: 100%; display: block; }
     .hero-desc { font-size: 13px; }
 
     /* Logo */
-    .navbar-logo { height: 36px; }
+    .navbar-logo { height: 30px; }
     .preloader-logo { height: 70px; }
 
     /* Portfolio */
