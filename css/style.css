@@ -32,12 +32,18 @@
 
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+    max-width: 100%;
+}
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--light);
     color: var(--text);
     overflow-x: hidden;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased;
 }
 a { text-decoration: none; transition: var(--transition); }
@@ -66,12 +72,21 @@ img { max-width: 100%; display: block; }
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 #preloader.hidden { opacity: 0; visibility: hidden; }
-.preloader-inner { text-align: center; }
+.preloader-inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+}
 .preloader-logo {
     height: 90px;
+    max-width: 260px;
     width: auto;
     object-fit: contain;
-    margin: 0 auto 24px;
+    margin: 0 0 24px;
     display: block;
 }
 .preloader-bar {
@@ -110,14 +125,16 @@ img { max-width: 100%; display: block; }
 
 /* Logo */
 .navbar-logo {
-    height: 48px;
+    height: 46px;
+    max-width: 200px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
 }
-#mainNav.scrolled .navbar-logo { height: 40px; }
+#mainNav.scrolled .navbar-logo { height: 38px; }
 .footer-logo {
-    height: 64px;
+    height: 60px;
+    max-width: 220px;
     width: auto;
     object-fit: contain;
 }
@@ -344,6 +361,8 @@ img { max-width: 100%; display: block; }
     padding: 15px 0;
     overflow: hidden;
     white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
 }
 .ticker-track {
     display: inline-block;
