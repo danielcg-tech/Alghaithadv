@@ -227,10 +227,10 @@ img { max-width: 100%; display: block; }
 /* ===== HERO ===== */
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     overflow: hidden;
     background: var(--dark);
 }
@@ -262,10 +262,11 @@ img { max-width: 100%; display: block; }
     position: relative;
     z-index: 2;
     padding-top: 90px;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     flex: 1;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 .hero-badge {
     display: inline-flex;
@@ -372,11 +373,9 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
-    max-width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    flex-shrink: 0;
     z-index: 3;
+    position: relative;
 }
 .ticker-track {
     display: inline-block;
