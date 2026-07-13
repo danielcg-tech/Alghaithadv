@@ -228,7 +228,8 @@ img { max-width: 100%; display: block; }
 .hero-section {
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    height: 100svh; /* accounts for mobile browser chrome (address bar) */
+    min-height: 580px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1118,6 +1119,8 @@ img { max-width: 100%; display: block; }
     .py-section { padding: 65px 0; }
 
     /* Hero */
+    .hero-section { height: 100vh; height: 100svh; }
+    .hero-content { padding-top: 80px; padding-bottom: 20px; }
     .hero-title { letter-spacing: -0.5px; }
     .hero-badge { font-size: 10px; letter-spacing: 1px; padding: 7px 14px; }
     .hero-btns { flex-direction: column; gap: 12px; }
@@ -1188,10 +1191,9 @@ img { max-width: 100%; display: block; }
 @media (max-width: 390px) {
     .py-section { padding: 50px 0; }
 
-    /* Hide hero badge — too cramped */
+    /* Hero — very small phones */
+    .hero-content { padding-top: 70px; padding-bottom: 16px; }
     .hero-badge { display: none; }
-
-    /* Hero text */
     .hero-tagline { letter-spacing: 2px; font-size: 12px; }
     .hero-desc { font-size: 13px; }
 
