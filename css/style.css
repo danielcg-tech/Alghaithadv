@@ -48,6 +48,7 @@ body {
 }
 a { text-decoration: none; transition: var(--transition); }
 img { max-width: 100%; display: block; }
+p { color: #171717; }
 
 /* Utility */
 .text-red   { color: var(--primary) !important; }
@@ -481,7 +482,7 @@ img { max-width: 100%; display: block; }
     letter-spacing: -0.5px;
 }
 .section-subtitle {
-    color: var(--gray);
+    color: #171717;
     font-size: 15px;
     max-width: 540px;
     margin: 0 auto;
@@ -585,7 +586,7 @@ img { max-width: 100%; display: block; }
 }
 .about-value-card p {
     font-size: 12px;
-    color: var(--gray);
+    color: #171717;
     line-height: 1.75;
     margin: 0;
 }
@@ -686,7 +687,7 @@ img { max-width: 100%; display: block; }
 }
 .service-card p {
     font-size: 13px;
-    color: var(--gray);
+    color: #171717;
     line-height: 1.85;
     margin: 0 0 20px;
 }
@@ -714,7 +715,7 @@ img { max-width: 100%; display: block; }
 .filter-btn {
     background: var(--light);
     border: 1px solid var(--border);
-    color: var(--gray);
+    color: #171717;
     padding: 9px 24px;
     border-radius: 50px;
     font-size: 11px;
@@ -841,7 +842,7 @@ img { max-width: 100%; display: block; }
 }
 .why-card p {
     font-size: 13px;
-    color: var(--gray);
+    color: #171717;
     line-height: 1.85;
     margin: 0;
 }
@@ -886,7 +887,7 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--gray);
+    color: #171717;
     margin-bottom: 5px;
 }
 .contact-info-text a,
@@ -923,7 +924,7 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--gray);
+    color: #171717;
     margin-bottom: 6px;
 }
 .contact-form .form-control {
